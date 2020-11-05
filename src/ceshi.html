@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul{
+      width: 200px;
+      list-style: none;
+      overflow: hidden;
+    }
+    li{
+      width: 40px;
+      background-color: pink;
+      height: 30px;
+      float: left;
+      text-align:center;
+
+    }
+    .active{
+      background-color: green;
+    }
+    h3{
+      display: none;
+    }
+    .on{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="active">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <div>
+    <h3 class="on">1</h3>
+    <h3>2</h3>
+    <h3>3</h3>
+    <h3>4</h3>
+    <h3>5</h3>
+  </div>
+  <script>
+    var lis=document.querySelectorAll('li')
+    var h3s=document.querySelectorAll('h3')
+    console.log(h3s)
+    for( var i=0;i<lis.length;i++){
+      lis[i].index=i
+      lis[i].onclick=function(){
+     
+       for (let j = 0; j < lis.length; j++) {
+     
+        lis[j].className=''
+        h3s[j].className=""
+         
+       }
+       this.className='active'
+       h3s[this.index].className='on'
+      }
+    }
+
+  </script>
+</body>
+</html>
